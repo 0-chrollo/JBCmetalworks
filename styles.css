@@ -22,18 +22,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
     nav {
         background:white;
         padding: 0 32px;
@@ -114,17 +102,16 @@
         right: 0;
         z-index: 100;
         opacity: 0;
+        overflow: hidden;
+        pointer-events: none;
         transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1),
                     opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      
-      .nav-links > * {
-        overflow: hidden;
       }
       
       .nav-links.open {
         grid-template-rows: 1fr;
         opacity: 1;
+        pointer-events: auto;
       }
       
       .nav-links a:not(.nav-cta) {
@@ -176,14 +163,12 @@
         font-size: 0.75rem !important;
         font-weight: 700 !important;
         text-decoration: none;
-       
         transition: background 0.2s ease, transform 0.15s ease !important;
         display: inline-block;
       }
       
       .nav-cta:hover {
         background: linear-gradient(110deg, #162d0f 0%, rgb(25, 52, 18) 100%);
-    
       }
       
       
@@ -203,14 +188,12 @@
           max-height: none;
           grid-template-rows: unset;
           overflow: visible;
+          pointer-events: auto;
           transition: none;
         }
       
-        .nav-links > * {
-          overflow: visible;
-        }
       
-        .nav-links a:not(.nav-cta) {
+        .nav-links a::after {
           margin: 0;
           padding: 0 16px;
           color: #02162e;
@@ -232,17 +215,10 @@
         }
       
         .nav-cta {
-          padding: 10px 22px !important;
-          font-size: 0.8rem !important;
+          padding: 10px 22px;
+          font-size: 0.8rem;
         }
       }
-        
-
-
-
-
-
-
 
 
 
